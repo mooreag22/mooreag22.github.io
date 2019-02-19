@@ -22,7 +22,25 @@ while (remainingletters > 0)
 {
 //show player their progress
 alert(answerArray.join(" "));
-}
+
+  //get a guess from the player
+  var guesss = prompt("please guess a single letter");
+  if (guess === null)
+  {
+    //quit
+    break;
+  }else if (guess.length !== 1)
+  {
+    alert("you must enter only a SINGLE letter");
+  }else{
+     //they have guessed a letter
+    for(word[j] = guess;
+        remainingLetters--;
+        }
+      }
+    }
+  }
+        alert("good job! the answer was" + word);
 </script>
 </body>
 </html>
