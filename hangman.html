@@ -1,0 +1,28 @@
+something
+<html>
+<head>
+<title>hangman>/title>
+</head>
+<body>
+<h1>hangman<h1>
+<script>
+//create a list of words to choose from
+var words= ["javascript", "monkeys", "amazing", "pancake"];
+//pick a random word
+var word = words[Math.floor(Math.random() * words.length)];
+//set up an array for the answer (will hold the blanks)
+var answerarray = [];
+for (var i = 0; i++)
+{
+answerarray [i] = "_";
+}
+var remainingletters = word.length;
+//the game loop
+while (remainingletters > 0)
+{
+//show player their progress
+alert(answerArray.join(" "));
+}
+</script>
+</body>
+</html>
