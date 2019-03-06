@@ -13,6 +13,12 @@
     $("#main-heading").text(newHeadingText);
       //set new text
       $("body").append("<p>This is a new page about serial killers.</p>");
+      for (var i = 0; i < 3; i++)
+      {
+        //start counting at 0, stop when you get to 3, add 1 each time
+        var choose = promp("Pick a serial killer");
+        $("body").append("<p>" + choose + "<p>");
+      }
   </script>
   
  
