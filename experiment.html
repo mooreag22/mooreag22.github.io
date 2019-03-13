@@ -29,7 +29,18 @@
       $("body").append("<p>Click! " + event.pageX
                        + " " + event.pageY</p>);
    };
-   $("#heading").click(clickHandler);
+   $("body").click(clickHandler);
+     
+     
+     $("html").mousemove(function(event)
+                         {
+       $("#heading").offset({
+         left: event.pageX
+         top:  event.pageY
+       });
+     });
+     
+         
   </script>
   </body>
   </html>
