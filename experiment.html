@@ -40,6 +40,21 @@
        });
      });
      
+   <script>
+     var getRandomNumber = function(size)
+     {
+       return Math.floor(Math.random() * size);
+     };
+   
+   var width = 400;
+   var height = 400;
+   
+   var treasure = {
+     x: getRandomNumber(width),
+     y: getRandomNumber(height)
+   };
+   
+   var xDifference = event.offsetX - treasure.x;
          
   </script>
   </body>
