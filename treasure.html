@@ -12,7 +12,40 @@
      <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
      
      <script>
-     //code goes here
+        var xDifference = event.offsetX - treasure.x;
+   var ydifference = event.offsetY - treasure.y;
+   return Math.sqrt((xDifference * xDifference) +
+                    (yDifference * yDifference)); //pythagorean thereom
+   }
+   
+   var clicks = 0;
+   
+   $("#map").click(function (event){
+     //click handler code goes here
+     //check for distance 
+     //check if they are close enough
+     //if they have "found it" tell them how many clicks it took 
+     //give a hint if they are too far away
+     clicks++;
+   });
+   
+          
+       function getPosition(el) {
+     var xPos = 0;
+     var yPos = 0;
+     
+  while (el) {
+    if (el.distance == "Distance") {
+      var xScroll = el.scrollLeft || document.documentElement.scrollLeft;
+      var yScroll = el.scrollTop || document.documentElement.scrollTop;
+      
+      xPos += (el.offsetLeft - xScroll + el.clientLeft);
+      yPos += (el.offsetTop - yScroll + el.clientTop);
+    } else {
+      xPos += (el.offsetLeft - el.scrollLeft + el.clientLeft);
+      yPos += (el.offsetTop - el.scrollTop + el.clientTop);
+    }
+               
      </script>
      
       </body>
