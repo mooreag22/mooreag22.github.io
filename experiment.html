@@ -1,85 +1,50 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>Interactive Programming</title>
   </head>
   
   <body>
- <h1 id="heading">A Little Bit About You...</h1>
- 
- <script src = "https://code.jquery.com/jquery-2.1.0.js"></script>
- 
- <script>
- 
- var leftOffSet = 0;
- var moveHeading = function ()
-  {
-    $("#heading").offset({left: leftOffSet}); //set the left offset
-    leftOffSet++; //update (add to) leftOffSet variable
+    <h1 id="heading">Hello World!</h1>
     
-    if(leftOffSet > 200)
-    {
-      leftOffSet = 0; //send back to the begining
-    }
-  };
-  setInterval(moveHeading, 30); // remember 1000 is one second
-  
-   var clickHandler = function(event)
-   {
-      $("body").append("<p>Click! " + event.pageX
-                       + " " + event.pageY+"</p>");
-   };
-   $("body").click(clickHandler);
-     
-     
-     $("html").mousemove(function(event)
-                         {
-       $("#heading").offset({
-         left: event.pageX
-         top:  event.pageY
-       });
-     });
-     
-   <script>
-     var getRandomNumber = function(size)
-     {
-       return Math.floor(Math.random() * size);
-     };
-   
-   var width = 400;
-   var height = 400;
-   
-   var treasure = {
-     x: getRandomNumber(width),
-     y: getRandomNumber(height)
-   };
-   
-   var xDifference = event.offsetX - treasure.x;
-   var ydifference = event.offsetY - treasure.y;
-   return Math.sqrt((xDifference * xDifference) +
-                    (yDifference * yDifference)); //pythagorean thereom
-   }
-   
-   var clicks = 0;
-   
-   $("#map").click(function (event){
-     //click handler code goes here
-     //check for distance 
-     //check if they are close enough
-     //if they have "found it" tell them how many clicks it took 
-     //give a hint if they are too far away
-     clicks++;
-   });
-   
-   
-   
-   function getPosition(el) {
-     var xPos = 0;
-     var yPos = 0;
-     
-  while (el) {
+    <script src = "https://code.jquery.com/jquery-2.1.0.js"></script>
     
-  </script>
+    <script>
+      
+      var leftOffset = 0;
+      
+      var moveHeading = function()
+      {
+        $("#heading").offset({left: leftOffset}); //set the left offset
+        
+        leftOffset++; // update (add to) leftOffset variable
+        
+        if(leftOffset > 200)
+        {
+          leftOffset = 0; //send back to the beginning (left of page)
+        }
+        
+      };
+      
+      setInterval(moveHeading, 30); // remember 1000 is 1 second
+      
+      var clickHandler = function(event)
+        {
+           $("body").append("<p>Click! " + event.pageX 
+                            + " " + event.pageY+"</p>");
+        };
+      $("body").click(clickHandler);
+      
+      $("html").mousemove(function(event)
+      {
+        $("#heading").offset({
+          left: event.pageX,
+          top: event.pageY
+        });
+      });
+      
+    </script>
   </body>
-  </html>
-
+  
+</html>
