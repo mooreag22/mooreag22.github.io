@@ -1,46 +1,56 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>hangman>/title>
-</head>
-<body>
-<h1>hangman<h1>
-<script>
-//create a list of words to choose from
-var words= ["javascript", "monkeys", "amazing", "pancake"];
-//pick a random word
-var word = words[Math.floor(Math.random() * words.length)];
-//set up an array for the answer (will hold the blanks)
-var answerarray = [];
-for (var i = 0; i++)
-{
-answerarray [i] = "_";
-}
-var remainingletters = word.length;
-//the game loop
-while (remainingletters > 0)
-{
-//show player their progress
-alert(answerArray.join(" "));
-
-  //get a guess from the player
-  var guesss = prompt("please guess a single letter");
-  if (guess === null)
-  {
-    //quit
-    break;
-  }else if (guess.length !== 1)
-  {
-    alert("you must enter only a SINGLE letter");
-  }else{
-     //they have guessed a letter
-    for(word[j] = guess;
-        remainingLetters--;
+  <head>
+    <title>Hangman!</title>
+  </head>
+  <body>
+    <h1> Hangman! </h1>
+    <a href="index.html">Home</a>
+    <script>
+      //Create a list of words to choose from
+      var words = ["javascript", "monkey", "amazing", 
+      "pancake", "awesome"];
+      
+      //Pick a random word
+      var word = words[Math.floor(Math.random() * words.length)];
+      
+      //Set up an array for the answer (will hold blanks)
+      var answerArray = [];
+      for(var i = 0; i < word.length; i++)
+      {
+        answerArray[i] = "_";
+      }
+      
+      var remainingLetters = word.length;
+      
+      //the game loop
+      while (remainingLetters > 0)
+      {
+        //Show player their progress
+        alert(answerArray.join(" "));
+        
+        //Get a guess from the player
+        var guess = prompt("Please guess a single letter");
+        if (guess === null)
+        {
+          //Quit
+          break;
+        }else if(guess.length !== 1)
+        {
+          alert("You must enter only a SINGLE letter!");
+        }else{
+          //they have guessed a letter, is it in the word?
+          for(var j = 0; j < word.length; j++)
+          {
+            if(word[j] === guess && answerArray[j] === "_")
+            {
+              answerArray[j] = guess;
+              remainingLetters--;
+            }
+          }
         }
       }
-    }
-  }
-        alert("good job! the answer was" + word);
-</script>
-</body>
+      alert("Good job! The answer was " + word);
+    </script>
+  </body>
 </html>
