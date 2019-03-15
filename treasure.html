@@ -1,52 +1,32 @@
-<!DOCTYPE html>
-  <html>
-     <head>
-        <title>Find the treasure!</title>
-     </head>
-     <body>
-      <h1 id = "heading">Find the hidden treasure!</h1>
-      <img id = "map"> width=400 height=400
-        src="https://nostarch.com/images/treasuremap.png">
-     <p id="distance"></p>
-     
-     <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
-     
-     <script>
-        var xDifference = event.offsetX - treasure.x;
-   var ydifference = event.offsetY - treasure.y;
-   return Math.sqrt((xDifference * xDifference) +
-                    (yDifference * yDifference)); //pythagorean thereom
-   }
-   
-   var clicks = 0;
-   
-   $("#map").click(function (event){
-     //click handler code goes here
-     //check for distance 
-     //check if they are close enough
-     //if they have "found it" tell them how many clicks it took 
-     //give a hint if they are too far away
-     clicks++;
-   });
-   
-          
-       function getPosition(el) {
-     var xPos = 0;
-     var yPos = 0;
-     
-  while (el) {
-    if (el.distance == "Distance") {
-      var xScroll = el.scrollLeft || document.documentElement.scrollLeft;
-      var yScroll = el.scrollTop || document.documentElement.scrollTop;
-      
-      xPos += (el.offsetLeft - xScroll + el.clientLeft);
-      yPos += (el.offsetTop - yScroll + el.clientTop);
-    } else {
-      xPos += (el.offsetLeft - el.scrollLeft + el.clientLeft);
-      yPos += (el.offsetTop - el.scrollTop + el.clientTop);
-    }
-               
-     </script>
-     
-      </body>
-   </html>
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>MOSS - Treasure Hunt Game</title>
+        <script src="js/phaser.min.js"></script>
+		<script src="js/jquery-2.0.3.min.js" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="css/moss.css">
+    </head>
+    <body>
+		<div class="container">
+			<!--Cabeçalho-->
+			<div class="title">
+				<span id="title" class="main-title"></span>
+				MOSS - Treasure Hunt Game
+			</div>
+			<div class="name">			
+				DAW - Marco Vicente - <a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">Instructions</a>
+			</div>
+			<!--Jogo-->
+			<script src="js/moss.treasure.hunt.js"></script>
+			<div id="gameDiv" class="game"/>		
+		</div>
+		<div id="light" class="instructions_content">
+			<h1>MOSS - Treasure Hunt Game</h1>
+			<p>Catch all the stars as fast as you can. Controls:</p>
+			<p><img src="images/moss-controls100x100.png"></p>
+			<p><a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">Close</a>	</p>
+		</div>
+		<div id="fade" class="fade_overlay"></div>
+    </body>
+</html>
