@@ -60,7 +60,7 @@
 			var distance = getDistanceToTreasure(event, treasure);
         		// check if they are close enough to find the treasure
         		// if they have 'found it' tell them how many clicks it took
-			if (distance <= 5)
+			if (distance <= 10)
 			{
 				$("#message").text("You found the treasure! It took you "+clicks+" clicks to find it!");
 			}else{
@@ -72,11 +72,11 @@
 		    
 		var hints = function(distance)
 		{
-			if(distance <= 20)
+			if(distance <= 25)
 			{ 
 				$("#message").text("You are close");
 				
-			}else if(distance <= 50)
+			}else if(distance <= 55)
 			{
 				$("#message").text("You are sorta close");
 				
