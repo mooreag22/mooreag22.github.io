@@ -19,30 +19,30 @@
       var tesla = new Car(10,20); // x=10, y=20
       
       // Let's create a method to draw a car
-      var drawCar = function(car)
+       Car.prototype.draw = function()
       {
         var carHtml = '<img src="https://nostarch.com/images/car.png">';
         
-        var carElement = $(carHtml);
+        this.carElement = $(carHtml);
         
-        carElement.css({
+        this.carElement.css({
           position: "absolute",
           left: car.x,
           top: car.y
         });
         
-        $("body").append(carElement);
+        $("body").append(this.carElement);
       };
       
-      drawCar(tesla);
+      telsa.draw();
       var nissan = new Car(100, 200);
-      drawCar(nissan);
+      nissan.draw();
       var ram = new Car(200,100);
-      drawCar(ram);
+      ram.draw();
       var chevy = new Car(300, 400);
-      drawCar(chevy);
+      chevy.draw();
       var charger = new Car(300, 300);
-      drawCar(charger);
+      charger.draw();
     </script>
   </body>
 </html>
