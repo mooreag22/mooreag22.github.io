@@ -44,6 +44,16 @@
           top: this.y
         });
       };
+      Car.prototype.moveLeft = function()
+      {
+        this.x -= 5; // adds 5 to the x value
+        
+        // this updates the position on the screen
+        this.carElement.css({
+          left: this.x, 
+          top: this.y
+        });
+      };
       
       tesla.draw();
       tesla.moveRight();
