@@ -50,7 +50,36 @@
           }
         }
       }
+      
+       // stick man
+      ctx.strokeStyle = "lightPink";
+      ctx.lineWidth = 10;
+      ctx.strokeRect(246, 0, 40, 40);
+      
+      ctx.beginPath();
+        // body
+        ctx.moveTo(266, 40);
+        ctx.lineTo(266, 160);
+      
+        // arm on left 
+        ctx.moveTo(266, 70);
+        ctx.lineTo(206, 20); 
+      
+        // arm on right
+        ctx.moveTo(266, 70);
+        ctx.lineTo(326, 20);  
+        
+        // leg on left
+        ctx.moveTo(266, 158);
+        ctx.lineTo(236, 240);
+      
+        // leg on right
+        ctx.moveTo(266, 158);
+        ctx.lineTo(296, 240);
+      ctx.stroke();
       alert("Good job! The answer was " + word);
+      
+     
     </script>
   </body>
 </html>
