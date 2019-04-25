@@ -51,6 +51,27 @@
         }
       }
       
+      
+      <head>
+    <title>Canvas</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="400" height="400"></canvas>
+    
+    <script>
+      var canvas = document.getElementById("canvas"); // look for canvas
+      var ctx = canvas.getContext("2d"); // tells javascript that the drawing will be 2 dimensional
+      ctx.fillStyle = "purple";
+      ctx.fillRect(0,0,133,400);
+      ctx.fillStyle = "turquoise";
+      ctx.fillRect(133,0,133,400);
+      ctx.fillStyle = "darkblue";
+      ctx.fillRect(266,0,133,400);
+      ctx.fillStyle = "black";
+      ctx.fillRect(100,0,40,40); // draw and fill a rectangle, at (100,0) with sides of length 40 (head)
+      ctx.fillRect(115,40,10,10); // draw and fill a rectangle, at (115, 40) with sides of length 10 (neck)
+      ctx.fillRect(70, 50, 100, 10); // (arms) (x, y, width, height)
+      ctx.fillRect(90, 60, 60, 60); //(body)
        // stick man
       ctx.strokeStyle = "lightPink";
       ctx.lineWidth = 10;
